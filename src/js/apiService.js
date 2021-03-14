@@ -12,9 +12,9 @@ export default class PhotosApiService {
 
     return fetch(url)
       .then(response => response.json())
-      .then(({ photos }) => {
+      .then(({ hits }) => {
         this.incrementPage();
-        return photos;
+        return hits;
       });
   }
 
