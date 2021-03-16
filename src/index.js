@@ -1,11 +1,17 @@
 import photoTemplate from "./templates/photo-card.hbs";
-import PhotosApiService from "./js/apiService.js";
+import PhotosApiService from "./js/api-service.js";
 import LoadMoreBtn from "./js/load-more-btn.js";
+import { arrowUpScroll } from "./js/scroll-window.js";
 import "./styles.css";
+/* import { modalImage } from "./js/modal-image.js"; */
+/* import { observer } from "./js/intersection-observer.js"; */
 
 const refs = {
   searchForm: document.querySelector(".js-search-form"),
+  input: document.querySelector(".input"),
+  arrowUp: document.querySelector(".arrow-up"),
   photosContainer: document.querySelector(".js-photos-container"),
+  photosRef: document.querySelector(".image"),
 };
 
 const loadMoreBtn = new LoadMoreBtn({
@@ -14,9 +20,6 @@ const loadMoreBtn = new LoadMoreBtn({
 });
 
 const photosApiService = new PhotosApiService();
-
-refs.searchForm.addEventListener("submit", onSearch);
-loadMoreBtn.refs.button.addEventListener("click", fetchPhotos);
 
 function onSearch(e) {
   e.preventDefault();
@@ -48,3 +51,7 @@ function appendPhotosMarkup(photos) {
 function clearPhotosContainer() {
   refs.photosContainer.innerHTML = "";
 }
+
+refs.searchForm.addEventListener("submit", onSearch);
+loadMoreBtn.refs.button.addEventListener("click", fetchPhotos);
+refs.arrowUp.addEventListener("click", arrowUpScroll);
