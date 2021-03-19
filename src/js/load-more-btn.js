@@ -8,7 +8,6 @@ export default class LoadMoreBtn {
     const refs = {};
     refs.button = document.querySelector(selector);
     refs.label = refs.button.querySelector(".label");
-
     return refs;
   }
 
@@ -28,5 +27,13 @@ export default class LoadMoreBtn {
 
   hide() {
     this.refs.button.classList.add("is-hidden");
+  }
+
+  scrollPage() {
+    window.scrollTo({
+      top: 0,
+      left: 1900,
+      behavior: "smooth",
+    });
   }
 }

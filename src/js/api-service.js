@@ -14,7 +14,6 @@ export default class PhotosApiService {
       .then(response => response.json())
       .then(({ hits }) => {
         this.incrementPage();
-        window.scrollByPages(this.page);
         return hits;
       });
   }

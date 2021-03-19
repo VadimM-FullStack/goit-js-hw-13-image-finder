@@ -1,17 +1,12 @@
 import photoTemplate from "./templates/photo-card.hbs";
 import PhotosApiService from "./js/api-service.js";
 import LoadMoreBtn from "./js/load-more-btn.js";
-import { arrowUpScroll } from "./js/scroll-window.js";
 import "./styles.css";
-/* import { modalImage } from "./js/modal-image.js"; */
-/* import { observer } from "./js/intersection-observer.js"; */
 
 const refs = {
   searchForm: document.querySelector(".js-search-form"),
-  input: document.querySelector(".input"),
   arrowUp: document.querySelector(".arrow-up"),
   photosContainer: document.querySelector(".js-photos-container"),
-  photosRef: document.querySelector(".image"),
 };
 
 const loadMoreBtn = new LoadMoreBtn({
@@ -41,6 +36,7 @@ function fetchPhotos() {
   photosApiService.fetchPhotos().then(photos => {
     appendPhotosMarkup(photos);
     loadMoreBtn.enable();
+    scrollToNewElements();
   });
 }
 
@@ -50,6 +46,24 @@ function appendPhotosMarkup(photos) {
 
 function clearPhotosContainer() {
   refs.photosContainer.innerHTML = "";
+}
+
+function scrollToNewElements() {
+  const totalScrollHeight = refs.photosContainer.clientHeight + 80;
+  setTimeout(() => {
+    window.scrollTo({
+      top: totalScrollHeight,
+      behavior: "smooth",
+    });
+  }, 500);
+}
+
+function arrowUpScroll() {
+  window.scrollTo({
+    top: 0,
+    left: 1,
+    behavior: "smooth",
+  });
 }
 
 refs.searchForm.addEventListener("submit", onSearch);

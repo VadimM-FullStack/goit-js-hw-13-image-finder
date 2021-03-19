@@ -8,7 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background-image: url('./images/bg-pattern.png');
+  background-image: url("./images/bg-pattern.png");
 }
 
 img {
@@ -34,9 +34,9 @@ img {
 .input {
   width: auto;
   margin-right: 30px;
-  padding: 10px 30px 12px;
+  padding: 10px 20px 12px;
   font-size: 18px;
-  border-radius: 2.5em;
+  border-radius: 0.2em;
 }
 
 .input:hover,
@@ -53,7 +53,7 @@ img {
   text-rendering: optimizeLegibility;
   display: inline-block;
   border: none;
-  border-radius: 2.5em;
+  border-radius: 0.2em;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1),
     inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
   color: #fff;
