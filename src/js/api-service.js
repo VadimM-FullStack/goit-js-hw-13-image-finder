@@ -1,5 +1,4 @@
-const BASE_URL = "https://pixabay.com/api/";
-const PIXABAY_KEY = "20677562-9c517eaf9134a4d9aa45dfdde";
+import { BASE_URL, PIXABAY_KEY } from "./base.js";
 
 export default class PhotosApiService {
   constructor() {

@@ -28,12 +28,4 @@ export default class LoadMoreBtn {
   hide() {
     this.refs.button.classList.add("is-hidden");
   }
-
-  scrollPage() {
-    window.scrollTo({
-      top: 0,
-      left: 1900,
-      behavior: "smooth",
-    });
-  }
 }
