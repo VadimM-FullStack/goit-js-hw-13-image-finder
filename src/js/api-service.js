@@ -1,4 +1,5 @@
-import { BASE_URL, PIXABAY_KEY } from "./base.js";
+const BASE_URL = "https://pixabay.com/api/";
+const PIXABAY_KEY = "20677562-9c517eaf9134a4d9aa45dfdde";
 
 export default class PhotosApiService {
   constructor() {
@@ -7,7 +8,14 @@ export default class PhotosApiService {
   }
 
   fetchPhotos() {
-    const url = `${BASE_URL}?key=${PIXABAY_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&page=${this.page}&per_page=12`;
+    const searchParams = new URLSearchParams({
+      q: this.searchQuery,
+      image_type: "photo",
+      orientation: "horizontal",
+      page: this.page,
+      per_page: 12,
+    });
+    const url = `${BASE_URL}?key=${PIXABAY_KEY}&${searchParams}`;
 
     return fetch(url)
       .then(response => response.json())

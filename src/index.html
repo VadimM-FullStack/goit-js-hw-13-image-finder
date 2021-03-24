@@ -11,7 +11,7 @@
     <title>Search Image</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-search">
       <form class="search-form js-search-form" id="search-form">
         <div class="search-group">
           <input
@@ -25,14 +25,17 @@
         <button type="submit" class="btn">Search</button>
       </form>
 
-      <ul class="photos js-photos-container">
+      <ul class="photos js-photos-container" id="scrollArea">
         <!-- Список <li> с карточками изображений -->
       </ul>
 
-      <button type="button" class="btn button" data-action="load-more">
+      <div class="observer-guard"></div>
+
+      <!-- Кнопка Load more -->
+      <!-- <button type="button" class="btn button" data-action="load-more">
         <span class="label">Load more</span>
-      </button>
-      <div class="observer-anchor"></div>
+      </button> -->
+
       <div class="arrow-up">
         <img
           src="images/Arrow_up_font_awesome.svg"
@@ -43,8 +46,8 @@
         />
       </div>
     </div>
-    <template class="modal-image-template">
-      <img class="modal-image" src="#" />
+    <template class="modal-img-template">
+      <img class="modal-img" src="#" />
     </template>
   </body>
 </html>

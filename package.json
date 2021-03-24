@@ -57,6 +57,7 @@
   "dependencies": {
     "basiclightbox": "^5.0.4",
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "infinite-scroll": "^4.0.1"
   }
 }

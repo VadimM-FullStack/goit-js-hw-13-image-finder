@@ -17,10 +17,10 @@ img {
   height: auto;
 }
 
-.container {
+.container-search {
   text-align: center;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
   width: 100%;
 }
 
@@ -28,7 +28,7 @@ img {
   display: flex;
   justify-content: center;
   padding: 8px;
-  margin-bottom: 60px;
+  margin-bottom: 36px;
 }
 
 .input {
@@ -90,7 +90,7 @@ img {
 
 .photos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 20px;
   padding: 0;
   margin: 0;
@@ -102,14 +102,14 @@ img {
 }
 
 .photos li {
-  height: 350px;
+  height: 440px;
   overflow: hidden;
 }
 
 .photos img {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 320px;
   object-fit: cover;
 }
 
@@ -126,7 +126,7 @@ img {
 
 .arrow-up {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 10px;
+  bottom: 30px;
   cursor: pointer;
 }
